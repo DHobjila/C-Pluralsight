@@ -1,0 +1,6 @@
+E:\Dragos\C-Pluralsight\1.Beginer\OOP Fundabentals in C#\ACM\ACM.BL\bin\Debug\ACM.BL.dll
+E:\Dragos\C-Pluralsight\1.Beginer\OOP Fundabentals in C#\ACM\ACM.BL\bin\Debug\ACM.BL.pdb
+E:\Dragos\C-Pluralsight\1.Beginer\OOP Fundabentals in C#\ACM\ACM.BL\obj\Debug\ACM.BL.csprojAssemblyReference.cache
+E:\Dragos\C-Pluralsight\1.Beginer\OOP Fundabentals in C#\ACM\ACM.BL\obj\Debug\ACM.BL.csproj.CoreCompileInputs.cache
+E:\Dragos\C-Pluralsight\1.Beginer\OOP Fundabentals in C#\ACM\ACM.BL\obj\Debug\ACM.BL.dll
+E:\Dragos\C-Pluralsight\1.Beginer\OOP Fundabentals in C#\ACM\ACM.BL\obj\Debug\ACM.BL.pdb
