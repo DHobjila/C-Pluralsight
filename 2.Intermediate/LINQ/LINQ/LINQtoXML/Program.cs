@@ -5,6 +5,7 @@ using System.Linq;
 using System.Xml.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace LINQtoXML
 {
@@ -13,8 +14,51 @@ namespace LINQtoXML
 
         static void Main(string[] args)
         {
-            CreateXml();
-            QueryXml();
+            //CreateXml();
+            //QueryXml();
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<CarDb>());
+            InsertData();
+            QueryData();
+        }
+
+        private static void QueryData()
+        {
+            
+            var db = new CarDb();
+            db.Database.Log = Console.WriteLine;
+
+            var query =
+                db.Cars.Where(c=>c.Manufacturer =="BMW")
+                  .OrderByDescending(c => c.Combined)
+                  .ThenBy(c => c.Name)
+                  .Take(10);
+            //from car in db.Cars
+            //orderby car.Combined descending, car.Name ascending
+            //select car;
+
+            Console.WriteLine(query.Count());
+            foreach (var car in query)
+            {
+                Console.WriteLine($"{car.Name} : {car.Combined}");
+            }
+
+
+        }
+
+        private static void InsertData()
+        {
+            var cars = ProcessCar("fuel.csv");
+            var db = new CarDb();
+            db.Database.Log = Console.WriteLine;
+
+            if (!db.Cars.Any())
+            {
+                foreach (var car in cars)
+                {
+                    db.Cars.Add(car);
+                }
+                db.SaveChanges();
+            }
         }
 
         private static void QueryXml()
